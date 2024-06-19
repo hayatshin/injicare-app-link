@@ -1,13 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-  </head>
-  <body>
-    <h1>Welcome to My Homepage</h1>
+    <title>Redirect Page</title>
+    <script>
+      function redirectToDomain() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    <script src="main.js"></script>
-  </body>
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href =
+            "https://apps.apple.com/app/인지케어-ai-치매-예방-솔루션/id6468271503";
+        } else if (/android/i.test(userAgent)) {
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.chugnchunon.chungchunon_android&hl=ko-KR";
+        } else {
+          // If not iOS or Android, stay on the original domain
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.chugnchunon.chungchunon_android&hl=ko-KR";
+        }
+      }
+    </script>
+  </head>
+
+  <body onload="redirectToDomain()"></body>
+
+  <!-- <body>
+    <script>
+      redirectToDomain();
+    </script>
+  </body> -->
 </html>
