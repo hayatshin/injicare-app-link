@@ -6,10 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ? "https://hayatshin.github.io"
       : "injicare-hayat://hayat.com";
 
-  const redirectDelay = 5000;
-  const redirectTimeout = setTimeout(() => {
-    window.location.href = redirectUrl;
-  }, redirectDelay);
+  window.location.href = redirectUrl;
 });
 
 function detectPlatform() {
